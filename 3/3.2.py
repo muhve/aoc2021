@@ -17,11 +17,9 @@ def asd(df, a, b):
         else:
             df = df[df[col] == b]
 
-    r = [str(int(df[c])) for c in df.columns]
+    r = [str(df[c].iloc[0]) for c in df.columns]
 
-    bin_str = "".join(r)
-
-    return int(bin_str, 2)
+    return int("".join(r), 2)
 
 
 res1 = asd(pd.DataFrame(input), 1, 0)
