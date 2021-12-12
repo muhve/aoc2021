@@ -1,14 +1,3 @@
-from os import SEEK_DATA
-import pandas as pd
-
-
-def print_2d(l):
-    for r in l:
-        print(" ".join(["." if x == 0 else str(x) for x in r]))
-
-    print()
-
-
 f = open("i", "r")
 lines = f.read().split("\n")
 
@@ -70,8 +59,6 @@ for line in input:
             for i in range(x2, x1 + 1):
                 res[y2 + c][i] += 1
                 c += 1
-
-    # print_2d(res)
 
 count = 0
 for r in res:

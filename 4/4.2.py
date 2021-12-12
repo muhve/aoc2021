@@ -1,5 +1,3 @@
-import pandas as pd
-
 f = open("i", "r")
 lines = f.read().split("\n\n")
 
@@ -7,18 +5,10 @@ l = lines.pop(0).split(",")
 
 boards = []
 
-print(l)
-
 for x in lines:
     b = x.split("\n")
     b = [r.split() for r in b]
     boards.append(b)
-
-
-def print_board(b):
-    for r in b:
-        print(r)
-    print()
 
 
 def loop(boards, l):
@@ -57,11 +47,8 @@ board, n = loop(boards, l)
 sum = 0
 
 for row in board:
-    print(row)
     for i in row:
         if i != True:
             sum += int(i)
 
-print(n)
-print(sum)
 print(sum * int(n))
